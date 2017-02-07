@@ -1,8 +1,5 @@
 package com.maxime.leblond;
 
-import com.sun.org.apache.xerces.internal.impl.dv.xs.DateTimeDV;
-import javafx.scene.input.DataFormat;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -64,19 +61,37 @@ public class Main {
     }
     public static String AjoutStr(String demande){
         System.out.printf("\t"+demande+"\n\t -");
-        return  new Scanner(System.in).next();
+        while (true){
+            try {
+                return  new Scanner(System.in).next();
+            }catch (Exception e){
+                return AjoutStr(demande);
+            }
+        }
     }
 
     public static int AjoutInt(String demande){
         System.out.printf("\t"+demande+"\n\t -");
-        return  new Scanner(System.in).nextInt();
+        while (true){
+            try {
+                return  new Scanner(System.in).nextInt();
+            }catch (Exception e){
+                return AjoutInt(demande);
+            }
+        }
     }
 
     public static Date AjoutDate(String demande) throws ParseException {
-        
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mmm/yyyy");
         Date date2=null;
-        date2 = dateFormat.parse(AjoutStr(demande));
-        return date2;
+        while (true) {
+            try {
+                date2 = dateFormat.parse(AjoutStr(demande));
+                return date2;
+            } catch (Exception e) {
+                return AjoutDate(demande);
+            }
+        }
     }
 }

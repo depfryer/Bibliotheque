@@ -25,10 +25,11 @@ public class Biblio {
         String nope ="";
         int s =0;
         for (Livre val : biblio) {
-            s++;
+
             nope += s+" . "+val.getTitre()+"\n";
+            s++;
         }
-        return "Biblio{\n"+nope+"\n}";
+        return "\nBiblio{\n"+nope+"\n}";
     }
 
     public String details(int id){

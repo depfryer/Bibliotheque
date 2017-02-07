@@ -17,27 +17,51 @@ public class Main {
             System.out.println("3. ajout Manga");
             System.out.println("4. Details Livre");
 
-            choix = new Scanner(System.in).nextInt();
+            choix = AjoutInt("");
 
 
             switch(choix){
                 case 1:
-                    alex.creeLivre("moi","moi","02-08-97",choix,"Fantastique");
+                    alex.creeLivre(AjoutStr("Titre"),
+                            AjoutStr("auteur"),
+                            AjoutStr("Date de parution"),
+                            AjoutInt("Prix"),
+                            AjoutStr("Genre"));
                     break;
                 case 2:
-                    alex.creeBd("mapoi","moi","02-08-97",choix,"Fantastique","pasmoi");
+                    alex.creeBd(
+                            AjoutStr("Titre"),
+                            AjoutStr("auteur"),
+                            AjoutStr("Date de parution"),
+                            AjoutInt("Prix"),
+                            AjoutStr("Genre"),
+                            AjoutStr("Dessinateur"));
                     break;
                 case 3:
-                    alex.creeManga("pasmao","moi","02-08-97",choix,"Fantastique","pasmoi");
+                    alex.creeManga(AjoutStr("Titre"),
+                            AjoutStr("auteur"),
+                            AjoutStr("Date de parution"),
+                            AjoutInt("Prix"),
+                            AjoutStr("Genre"),
+                            AjoutStr("Dessinateur"));
                     break;
                 case 4:
                     System.out.printf( alex.toString());
-                    int decide = new Scanner(System.in).nextInt();
-                    System.out.printf(alex.details(decide));
+
+                    System.out.printf(alex.details(AjoutInt("")));
 
 
             }
         System.out.printf( alex.toString());
         } while(choix != 0);
+    }
+    public static String AjoutStr(String demande){
+        System.out.printf("\t"+demande+"\n\t -");
+        return  new Scanner(System.in).next();
+    }
+
+    public static int AjoutInt(String demande){
+        System.out.printf("\t"+demande+"\n\t -");
+        return  new Scanner(System.in).nextInt();
     }
 }

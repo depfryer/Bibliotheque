@@ -36,4 +36,8 @@ public class Biblio {
     public String details(int id){
         return biblio.get(id).toString();
     }
+
+    public Livre Dernierlivre(){
+       return biblio.get(biblio.size()-1);
+    }
 }

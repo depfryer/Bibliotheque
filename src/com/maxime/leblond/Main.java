@@ -1,15 +1,19 @@
 package com.maxime.leblond;
 
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
+import static jdk.internal.org.objectweb.asm.commons.GeneratorAdapter.AND;
+
 public class Main {
 
     public static void main(String[] args) throws ParseException {
-	System.out.printf("yolo");
+
     Biblio alex = new Biblio();
+    Bdd base = Bdd.getInstance();
 
         int choix;
         do{
@@ -56,9 +60,19 @@ public class Main {
                     break;
 
             }
-        System.out.printf( alex.toString());
+
+            if ((choix > 0)&&(choix<=3) )
+                try {
+                    base.AjoutBdd(alex.Dernierlivre());
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            System.out.printf( alex.toString());
         } while(choix != 0);
     }
+
+
+
     public static String AjoutStr(String demande){
         System.out.printf("\t"+demande+"\n\t -");
         while (true){

@@ -12,16 +12,5 @@ public class Manga extends Bd{
         super(titre, auteur, dateParussion, prix, genre, dessinateur);
     }
 
-    @Override
-    public String toString() {
-        super.toString();
-        return "Manga {" +
-                "titre='" + titre + '\'' +
-                ", Auteur='" + Auteur + '\'' +
-                ", dateParussion='" + dateParussion + '\'' +
-                ", prix=" + prix +
-                ", Genre='" + Genre + '\'' +
-                "Dessinateur='" + Dessinateur + '\'' +
-                '}';
-    }
+
 }

@@ -10,11 +10,20 @@ public class Livre{
     String Auteur;
     Date dateParussion;
     int prix;
-    String Genre;
-
+    String genre;
+    String dessinateur;
+    Bdd base = Bdd.getInstance();
 
     public String getTitre() {
         return titre;
+    }
+
+    public String getDessinateur() {
+        return dessinateur;
+    }
+
+    public void setDessinateur(String dessinateur) {
+        this.dessinateur = dessinateur;
     }
 
     @Override
@@ -24,7 +33,7 @@ public class Livre{
                 ", Auteur='" + Auteur + '\'' +
                 ", dateParussion='" + dateParussion + '\'' +
                 ", prix=" + prix +
-                ", Genre='" + Genre + '\'' +
+                ", genre='" + genre + '\'' +
                 '}';
     }
 
@@ -36,7 +45,7 @@ public class Livre{
         Auteur = auteur;
         this.dateParussion = dateParussion;
         this.prix = prix;
-        Genre = genre;
+        this.genre = genre;
     }
 
 }

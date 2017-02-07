@@ -29,7 +29,7 @@ public class Main {
                             AjoutStr("auteur"),
                             AjoutDate("Date de parution"),
                             AjoutInt("Prix"),
-                            AjoutStr("Genre"));
+                            AjoutStr("genre"));
                     break;
                 case 2:
                     alex.creeBd(
@@ -37,7 +37,7 @@ public class Main {
                             AjoutStr("auteur"),
                             AjoutDate("Date de parution"),
                             AjoutInt("Prix"),
-                            AjoutStr("Genre"),
+                            AjoutStr("genre"),
                             AjoutStr("Dessinateur"));
                     break;
                 case 3:
@@ -45,7 +45,7 @@ public class Main {
                             AjoutStr("auteur"),
                             AjoutDate("Date de parution"),
                             AjoutInt("Prix"),
-                            AjoutStr("Genre"),
+                            AjoutStr("genre"),
                             AjoutStr("Dessinateur"));
                     break;
                 case 4:

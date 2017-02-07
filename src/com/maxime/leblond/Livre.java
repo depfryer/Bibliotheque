@@ -1,12 +1,14 @@
 package com.maxime.leblond;
 
+import java.util.Date;
+
 /**
  * Created by duche on 07/02/2017.
  */
 public class Livre{
     String titre;
     String Auteur;
-    String dateParussion;
+    Date dateParussion;
     int prix;
     String Genre;
 
@@ -29,7 +31,7 @@ public class Livre{
 
 
 
-    public Livre(String titre, String auteur, String dateParussion, int prix, String genre) {
+    public Livre(String titre, String auteur, Date dateParussion, int prix, String genre) {
         this.titre = titre;
         Auteur = auteur;
         this.dateParussion = dateParussion;

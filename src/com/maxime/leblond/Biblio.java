@@ -1,6 +1,7 @@
 package com.maxime.leblond;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by duche on 07/02/2017.
@@ -9,14 +10,14 @@ public class Biblio {
     private ArrayList<Livre> biblio = new ArrayList<Livre>(0) ;
 
 
-    public void creeLivre(String titre,String auteur,String dateParussion,int prix,String genre){
+    public void creeLivre(String titre, String auteur, Date dateParussion, int prix, String genre){
         this.biblio.add( new Livre(titre,auteur,dateParussion,prix,genre));
     }
 
-    public void creeBd(String titre,String auteur,String dateParussion,int prix,String genre,String dessinateur){
+    public void creeBd(String titre, String auteur, Date dateParussion, int prix, String genre, String dessinateur){
         biblio.add(new Bd( titre, auteur, dateParussion, prix, genre,dessinateur));
     }
-    public void creeManga(String titre,String auteur,String dateParussion,int prix,String genre,String dessinateur){
+    public void creeManga(String titre, String auteur, Date dateParussion, int prix, String genre, String dessinateur){
         biblio.add(new Manga( titre, auteur, dateParussion, prix, genre,dessinateur));
     }
 

@@ -1,10 +1,16 @@
 package com.maxime.leblond;
 
+import com.sun.org.apache.xerces.internal.impl.dv.xs.DateTimeDV;
+import javafx.scene.input.DataFormat;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 	System.out.printf("yolo");
     Biblio alex = new Biblio();
 
@@ -24,7 +30,7 @@ public class Main {
                 case 1:
                     alex.creeLivre(AjoutStr("Titre"),
                             AjoutStr("auteur"),
-                            AjoutStr("Date de parution"),
+                            AjoutDate("Date de parution"),
                             AjoutInt("Prix"),
                             AjoutStr("Genre"));
                     break;
@@ -32,7 +38,7 @@ public class Main {
                     alex.creeBd(
                             AjoutStr("Titre"),
                             AjoutStr("auteur"),
-                            AjoutStr("Date de parution"),
+                            AjoutDate("Date de parution"),
                             AjoutInt("Prix"),
                             AjoutStr("Genre"),
                             AjoutStr("Dessinateur"));
@@ -40,16 +46,17 @@ public class Main {
                 case 3:
                     alex.creeManga(AjoutStr("Titre"),
                             AjoutStr("auteur"),
-                            AjoutStr("Date de parution"),
+                            AjoutDate("Date de parution"),
                             AjoutInt("Prix"),
                             AjoutStr("Genre"),
                             AjoutStr("Dessinateur"));
                     break;
                 case 4:
                     System.out.printf( alex.toString());
-
                     System.out.printf(alex.details(AjoutInt("")));
-
+                    break;
+                default:
+                    break;
 
             }
         System.out.printf( alex.toString());
@@ -63,5 +70,13 @@ public class Main {
     public static int AjoutInt(String demande){
         System.out.printf("\t"+demande+"\n\t -");
         return  new Scanner(System.in).nextInt();
+    }
+
+    public static Date AjoutDate(String demande) throws ParseException {
+        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mmm/yyyy");
+        Date date2=null;
+        date2 = dateFormat.parse(AjoutStr(demande));
+        return date2;
     }
 }

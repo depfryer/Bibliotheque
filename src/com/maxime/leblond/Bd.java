@@ -23,4 +23,5 @@ public class Bd extends Livre {
                 "Dessinateur='" + Dessinateur + '\'' +
                 '}';
     }
+
 }

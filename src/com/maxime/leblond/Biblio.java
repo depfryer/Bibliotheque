@@ -41,9 +41,15 @@ public class Biblio {
     public String details(int id){
         return biblio.get(id).toString();
     }
+    public String Titre(int id){
+        return biblio.get(id).getTitre();
+    }
 
     public Livre Dernierlivre(){
        return biblio.get(biblio.size()-1);
+    }
+    public int DernierNum(){
+        return biblio.size()-1;
     }
 
     public void RecupLivre(Bdd base){

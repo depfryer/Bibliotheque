@@ -22,7 +22,7 @@ public class Main {
     Bdd base = Bdd.getInstance();
     alex.RecupLivre(base);
     Menu myForm = new Menu(alex);
-        int choix;
+    int choix;
     do{
         System.out.println("\n\n----MENU----");
         System.out.println("0. Quitter");

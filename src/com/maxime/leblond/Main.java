@@ -12,9 +12,10 @@ public class Main {
 
     public static void main(String[] args) throws ParseException {
 
+
     Biblio alex = new Biblio();
     Bdd base = Bdd.getInstance();
-
+        alex.RecupLivre(base);
         int choix;
         do{
             System.out.println("\n\n----MENU----");
@@ -108,4 +109,6 @@ public class Main {
             }
         }
     }
+
+
 }

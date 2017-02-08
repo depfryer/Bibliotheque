@@ -15,7 +15,7 @@ public class Livre{
     Date dateParussion;
     int prix;
     String genre;
-    String dessinateur =null;
+    String dessinateur ="";
 
 
 
@@ -58,20 +58,15 @@ public class Livre{
 
 
     public String PourLabdd() {
-        String dessinateurs;
-        if (dessinateur == null){
-            dessinateurs = null;
-        } else {
-            dessinateurs = "'"+dessinateur+"'";
-        }
+
         return  "'"+
                 getClass().getSimpleName()+"','"+
                 titre + "','" +
                 Auteur + "','" +
                 dateSql(dateParussion) +"','"+
                 prix +"','"+
-                genre + "'," +
-                dessinateurs;
+                genre + "','" +
+                dessinateur+"'";
     }
 
     public String dateSql(Date dateAChanger){
